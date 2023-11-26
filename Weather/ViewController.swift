@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     private lazy var headerView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "contrastColor")
         view.layer.cornerRadius = 20
         return view
     }()
@@ -46,6 +46,28 @@ class ViewController: UIViewController {
         imageView.image = UIImage(named: "sunIcon")
         imageView.contentMode = .scaleAspectFit
         return imageView
+    }()
+    private lazy var humidityLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Umidade"
+        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        label.textColor = UIColor(named: "contrastColor")
+        return label
+    }()
+    private lazy var humidityValueLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "1000mm"
+        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        label.textColor = UIColor(named: "contrastColor")
+        return label
+    }()
+    private lazy var humidityStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
    
     override func viewDidLoad() {
@@ -77,9 +99,12 @@ class ViewController: UIViewController {
     private func setHierarchy(){
         view.addSubview(backgroundView)
         view.addSubview(headerView)
+        view.addSubview(humidityStackView)
         headerView.addSubview(cityLabel)
         headerView.addSubview(temperatureLabel)
         headerView.addSubview(weatherIcon)
+        humidityStackView.addArrangedSubview(humidityLabel)
+        humidityStackView.addArrangedSubview(humidityValueLabel)
     }
     
     private func setConstrains(){
@@ -106,6 +131,12 @@ class ViewController: UIViewController {
             weatherIcon.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -26),
             weatherIcon.centerYAnchor.constraint(equalTo: temperatureLabel.centerYAnchor),
             weatherIcon.leadingAnchor.constraint(equalTo: temperatureLabel.trailingAnchor, constant: 14)
+        ])
+        NSLayoutConstraint.activate([
+            humidityStackView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 24),
+            humidityStackView.widthAnchor.constraint(equalToConstant: 206),
+            humidityStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            
         ])
         
     }
