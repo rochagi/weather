@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+  
+    
     private lazy var backgroundView: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.image = UIImage(named: "Background")
@@ -112,6 +114,19 @@ class ViewController: UIViewController {
         
         return label
     }()
+    private lazy var houryCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 67, height: 84)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .red
+        collectionView.dataSource = self
+        collectionView.register(HourlyCollectionViewCell.self, forCellWithReuseIdentifier: HourlyCollectionViewCell.indentifier)
+        return collectionView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -143,6 +158,7 @@ class ViewController: UIViewController {
         view.addSubview(headerView)
         view.addSubview(infosStackView)
         view.addSubview(labelHora)
+        view.addSubview(houryCollectionView )
         headerView.addSubview(cityLabel)
         headerView.addSubview(temperatureLabel)
         headerView.addSubview(weatherIcon)
@@ -185,11 +201,26 @@ class ViewController: UIViewController {
             infosStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         NSLayoutConstraint.activate([
-            labelHora.topAnchor.constraint(equalTo: infosStackView.bottomAnchor, constant: 40),
-            labelHora.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            labelHora.topAnchor.constraint(equalTo: infosStackView.bottomAnchor, constant: 29),
+            labelHora.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            houryCollectionView.topAnchor.constraint(equalTo: labelHora.bottomAnchor, constant: 22),
+            houryCollectionView.heightAnchor.constraint(equalToConstant: 84),
+            houryCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            houryCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
         
     }
 
 }
 
+extension ViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourlyCollectionViewCell.indentifier, for: indexPath)
+        return cell
+    }
+    
+}
