@@ -126,6 +126,16 @@ class ViewController: UIViewController {
         collectionView.register(HourlyCollectionViewCell.self, forCellWithReuseIdentifier: HourlyCollectionViewCell.indentifier)
         return collectionView
     }()
+    private lazy var labeldaily: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor.contrastColor
+        label.text = "previsão por hora".uppercased()
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 12, weight: .semibold)
+        
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
