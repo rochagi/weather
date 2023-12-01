@@ -130,11 +130,14 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.contrastColor
-        label.text = "previsão por hora".uppercased()
+        label.text = "próximos dias".uppercased()
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 12, weight: .semibold)
-        
         return label
+    }()
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        return tableView
     }()
     
     override func viewDidLoad() {
