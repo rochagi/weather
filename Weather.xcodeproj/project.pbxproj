@@ -14,6 +14,7 @@
 		B7F232882B1039C5006A3902 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7F232862B1039C5006A3902 /* LaunchScreen.storyboard */; };
 		B7F232902B16C95A006A3902 /* HourlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2328F2B16C959006A3902 /* HourlyCollectionViewCell.swift */; };
 		B7F232922B16D5F0006A3902 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F232912B16D5F0006A3902 /* Color+Extensions.swift */; };
+		B7F232942B1ABBBF006A3902 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F232932B1ABBBE006A3902 /* DailyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B7F232892B1039C5006A3902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7F2328F2B16C959006A3902 /* HourlyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCollectionViewCell.swift; sourceTree = "<group>"; };
 		B7F232912B16D5F0006A3902 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		B7F232932B1ABBBE006A3902 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				B7F232842B1039C5006A3902 /* Assets.xcassets */,
 				B7F232862B1039C5006A3902 /* LaunchScreen.storyboard */,
 				B7F232892B1039C5006A3902 /* Info.plist */,
+				B7F232932B1ABBBE006A3902 /* DailyTableViewCell.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				B7F232922B16D5F0006A3902 /* Color+Extensions.swift in Sources */,
 				B7F232802B1039C3006A3902 /* ViewController.swift in Sources */,
 				B7F2327C2B1039C3006A3902 /* AppDelegate.swift in Sources */,
+				B7F232942B1ABBBF006A3902 /* DailyTableViewCell.swift in Sources */,
 				B7F2327E2B1039C3006A3902 /* SceneDelegate.swift in Sources */,
 				B7F232902B16C95A006A3902 /* HourlyCollectionViewCell.swift in Sources */,
 			);

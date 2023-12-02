@@ -135,8 +135,11 @@ class ViewController: UIViewController {
         label.font = .systemFont(ofSize: 12, weight: .semibold)
         return label
     }()
-    private lazy var tableView: UITableView = {
+    private lazy var dailyTableView: UITableView = {
         let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .systemPink
+        tableView.dataSource = self
         return tableView
     }()
     
@@ -171,7 +174,9 @@ class ViewController: UIViewController {
         view.addSubview(headerView)
         view.addSubview(infosStackView)
         view.addSubview(labelHora)
-        view.addSubview(houryCollectionView )
+        view.addSubview(houryCollectionView)
+        view.addSubview(labeldaily)
+        view.addSubview(dailyTableView)
         headerView.addSubview(cityLabel)
         headerView.addSubview(temperatureLabel)
         headerView.addSubview(weatherIcon)
@@ -220,6 +225,15 @@ class ViewController: UIViewController {
             houryCollectionView.heightAnchor.constraint(equalToConstant: 84),
             houryCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             houryCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+        NSLayoutConstraint.activate([
+            labeldaily.topAnchor.constraint(equalTo: houryCollectionView.bottomAnchor, constant: 29),
+            labeldaily.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            dailyTableView.topAnchor.constraint(equalTo: labeldaily.bottomAnchor, constant: 30),
+            dailyTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            dailyTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            dailyTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            
         ])
         
     }
