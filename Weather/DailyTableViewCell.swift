@@ -8,6 +8,15 @@
 import UIKit
 
 class DailyTableViewCell: UITableViewCell {
+    
+    static let identifier: String = "dailyForecast"
+    
+    private lazy var weekDayLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

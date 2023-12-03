@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+
+    
   
     
     private lazy var backgroundView: UIImageView = {
@@ -140,6 +142,7 @@ class ViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .systemPink
         tableView.dataSource = self
+        tableView.register(DailyTableViewCell.self, forCellReuseIdentifier: DailyTableViewCell.identifier)
         return tableView
     }()
     
@@ -250,4 +253,14 @@ extension ViewController: UICollectionViewDataSource {
         return cell
     }
     
+}
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.identifier, for: indexPath)
+        return cell
+    }
 }
