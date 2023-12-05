@@ -67,12 +67,7 @@ class DailyTableViewCell: UITableViewCell {
         
     }
     private func setConstraints(){
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-        ])
+        stackView.setConstraintsToParents(contentView)
         
     }
     

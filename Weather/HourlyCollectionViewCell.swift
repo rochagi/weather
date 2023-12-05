@@ -72,11 +72,8 @@ class HourlyCollectionViewCell: UICollectionViewCell {
         
     }
     private func setConstraints(){
+        stackView.setConstraintsToParents(contentView)
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             iconImageView.heightAnchor.constraint(equalToConstant: 33),
         ])
     }
