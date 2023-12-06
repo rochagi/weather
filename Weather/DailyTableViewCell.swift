@@ -59,6 +59,7 @@ class DailyTableViewCell: UITableViewCell {
     }
     
     private func setupView(){
+        backgroundColor = .clear
         setHierarchy()
         setConstraints()
     }
