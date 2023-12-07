@@ -22,7 +22,7 @@ class DailyTableViewCell: UITableViewCell {
     private lazy var minDayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "min 25oC"
+        label.text = "min 25ºC".uppercased()
         label.textColor = UIColor.contrastColor
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         return label
@@ -30,7 +30,7 @@ class DailyTableViewCell: UITableViewCell {
     private lazy var maxDayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "max 32oC"
+        label.text = "max 32ºC".uppercased()
         label.textColor = UIColor.contrastColor
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         return label
@@ -46,6 +46,9 @@ class DailyTableViewCell: UITableViewCell {
         let stackView = UIStackView(arrangedSubviews: [weekDayLabel, iconImageView, minDayLabel, maxDayLabel])
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16)
+        stackView.spacing = 15
         return stackView
     }()
 
@@ -60,6 +63,7 @@ class DailyTableViewCell: UITableViewCell {
     
     private func setupView(){
         backgroundColor = .clear
+        selectionStyle = .none
         setHierarchy()
         setConstraints()
     }
@@ -69,6 +73,9 @@ class DailyTableViewCell: UITableViewCell {
     }
     private func setConstraints(){
         stackView.setConstraintsToParents(contentView)
+        NSLayoutConstraint.activate([
+            weekDayLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 77)
+        ])
         
     }
     

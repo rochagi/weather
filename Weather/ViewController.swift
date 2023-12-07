@@ -197,14 +197,14 @@ class ViewController: UIViewController {
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),
-            headerView.heightAnchor.constraint(equalToConstant: 169)
+            headerView.heightAnchor.constraint(equalToConstant: 150)
         ])
         NSLayoutConstraint.activate([
             cityLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 15),
             cityLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 15),
             cityLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -15),
             cityLabel.heightAnchor.constraint(equalToConstant: 20),
-            temperatureLabel.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 21),
+            temperatureLabel.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 12),
             temperatureLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 26),
             weatherIcon.heightAnchor.constraint(equalToConstant: 86),
             weatherIcon.widthAnchor.constraint(equalToConstant: 86),
@@ -228,7 +228,7 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             labeldaily.topAnchor.constraint(equalTo: houryCollectionView.bottomAnchor, constant: 29),
             labeldaily.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            dailyTableView.topAnchor.constraint(equalTo: labeldaily.bottomAnchor, constant: 30),
+            dailyTableView.topAnchor.constraint(equalTo: labeldaily.bottomAnchor, constant: 16),
             dailyTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             dailyTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             dailyTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
