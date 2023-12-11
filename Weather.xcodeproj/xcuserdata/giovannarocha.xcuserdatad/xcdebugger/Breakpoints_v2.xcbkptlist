@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8184B99B-FA56-4D0F-80EF-CFFF6C2DC631"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "337ECF2F-B2B4-45FB-87E7-9E8679324C5E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weather/Service.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "fetchData(city:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "337ECF2F-B2B4-45FB-87E7-9E8679324C5E - 5148cddb4ed80363"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weather.Service.fetchData(city: Weather.City, _: (Swift.Optional&lt;Weather.ForecastResponse&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/giovannarocha/Desktop/Weather/Weather/Service.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1061">
+               </Location>
+               <Location
+                  uuid = "337ECF2F-B2B4-45FB-87E7-9E8679324C5E - 5148cddb4ed80363"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weather.Service.fetchData(city: Weather.City, _: (Swift.Optional&lt;Weather.ForecastResponse&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/giovannarocha/Desktop/Weather/Weather/Service.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1139">
+               </Location>
+               <Location
+                  uuid = "337ECF2F-B2B4-45FB-87E7-9E8679324C5E - 5148cddb4ed80363"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Weather.Service.fetchData(city: Weather.City, _: (Swift.Optional&lt;Weather.ForecastResponse&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Weather"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/giovannarocha/Desktop/Weather/Weather/Service.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1585">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8DFB74A8-F6B7-464F-B6B3-4EF8274D2209"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weather/Service.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "fetchData(city:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

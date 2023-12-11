@@ -14,18 +14,31 @@ struct City {
 }
 
 class Service {
-    private let baseURL: String = "https://api.openweathermap.org/data/3.0/onecall"
+    private let baseURL: String = "https://api.openweathermap.org/data/2.5/onecall"
     private let APIKey: String = "2b75a26ac7e3392386bd92fecfad70d3"
     private let session = URLSession.shared
     
-    func fetchData(city: City, _ completion: @escaping (String) -> Void){
+    func fetchData(city: City, _ completion: @escaping (ForecastResponse?) -> Void){
         let URLString = "\(baseURL)?lat=\(city.lat)&lon=\(city.lon)&appid=\(APIKey)"
         
         guard let url = URL(string: URLString) else { return }
         
         let task = session.dataTask(with: url) { data, response, error in
             
-            completion("banana")
+            guard let data else{
+                completion(nil)
+                return
+            }
+            
+            do {
+                let forecastResponse = try JSONDecoder().decode(ForecastResponse.self, from: data)
+                completion(forecastResponse)
+            } catch {
+                print(String(data: data, encoding: .utf8) ?? "")
+                completion(nil)
+            }
+            
+            
         }
         task.resume()
         
@@ -33,10 +46,6 @@ class Service {
     
 }
 
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let forecastResponse = try? JSONDecoder().decode(ForecastResponse.self, from: jsonData)
 // MARK: - ForecastResponse
 struct ForecastResponse: Codable {
     let current: Forecast
@@ -48,18 +57,6 @@ struct ForecastResponse: Codable {
     }
 }
 
-// MARK: - Alert
-struct Alert: Codable {
-    let senderName, event: String
-    let start, end: Int
-    let description: String
-    let tags: [JSONAny]
-
-    enum CodingKeys: String, CodingKey {
-        case senderName = "sender_name"
-        case event, start, end, description, tags
-    }
-}
 
 // MARK: - Forecast
 struct Forecast: Codable {
