@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20)
-        label.text = "São Paulo"
+        
         label.textAlignment = .center
         label.textColor = UIColor.primaryColor
         return label
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 70, weight: .bold)
-        label.text = "25°C"
+        
         label.textAlignment = .left
         label.textColor = UIColor.primaryColor
         return label
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     private lazy var humidityValueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "1000mm"
+        
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         label.textColor = UIColor.contrastColor
         return label
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
     private lazy var windValueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "10km/h"
+        
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         label.textColor = UIColor.contrastColor
         return label
@@ -147,17 +147,27 @@ class ViewController: UIViewController {
     }()
     
     private let service = Service()
+    private var city = City(lat: "-23.6814346", lon: "-46.9249599", name: "São Paulo")
+    private var forecastResponse: ForecastResponse?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        service.fetchData(city: City(lat: "-23.6814346", lon: "-46.9249599", name: "São Paulo")){message in
-            print(message)
-            
-        }
+        
        
     }
     
+    private func fetchData(){
+        service.fetchData(city: city){ [weak self] response in
+            self?.forecastResponse = response
+            self?.loadData()
+            
+        }
+    }
+    private func loadData(){
+        cityLabel.text = city.name
+        temperatureLabel.text = "\(forecastResponse?.current.temp ?? 0)"
+    }
     
     private func setUpView(){
         
