@@ -170,6 +170,8 @@ class ViewController: UIViewController {
     private func loadData(){
         cityLabel.text = city.name
         temperatureLabel.text = "\(Int(forecastResponse?.current.temp ?? 0))ºC"
+        humidityValueLabel.text = "\(forecastResponse?.current.humidity ?? 0)mm"
+        windValueLabel.text = "\(forecastResponse?.current.windSpeed ?? 0)km/h"
     }
     
     private func setUpView(){
@@ -250,7 +252,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        forecastResponse?.hourly.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
