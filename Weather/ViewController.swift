@@ -256,7 +256,12 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourlyCollectionViewCell.indentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourlyCollectionViewCell.indentifier, for: indexPath) as? HourlyCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        let forecast = forecastResponse?.hourly[indexPath.row]
+        cell.loadData(time: <#T##String#>, icon: <#T##UIImage#>, temp: <#T##String#>)
+         
         return cell
     }
     

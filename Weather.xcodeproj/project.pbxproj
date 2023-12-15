@@ -17,6 +17,7 @@
 		B7F232942B1ABBBF006A3902 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F232932B1ABBBE006A3902 /* DailyTableViewCell.swift */; };
 		B7F232962B1EB4BE006A3902 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F232952B1EB4BE006A3902 /* UIView+Extensions.swift */; };
 		B7F232982B216306006A3902 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F232972B216306006A3902 /* Service.swift */; };
+		B7F2329A2B2BEF26006A3902 /* Core+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F232992B2BEF26006A3902 /* Core+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B7F232932B1ABBBE006A3902 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 		B7F232952B1EB4BE006A3902 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B7F232972B216306006A3902 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		B7F232992B2BEF26006A3902 /* Core+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				B7F232932B1ABBBE006A3902 /* DailyTableViewCell.swift */,
 				B7F232952B1EB4BE006A3902 /* UIView+Extensions.swift */,
 				B7F232972B216306006A3902 /* Service.swift */,
+				B7F232992B2BEF26006A3902 /* Core+Extensions.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				B7F232982B216306006A3902 /* Service.swift in Sources */,
 				B7F232922B16D5F0006A3902 /* Color+Extensions.swift in Sources */,
 				B7F232802B1039C3006A3902 /* ViewController.swift in Sources */,
+				B7F2329A2B2BEF26006A3902 /* Core+Extensions.swift in Sources */,
 				B7F2327C2B1039C3006A3902 /* AppDelegate.swift in Sources */,
 				B7F232942B1ABBBF006A3902 /* DailyTableViewCell.swift in Sources */,
 				B7F2327E2B1039C3006A3902 /* SceneDelegate.swift in Sources */,
