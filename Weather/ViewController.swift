@@ -169,7 +169,7 @@ class ViewController: UIViewController {
     }
     private func loadData(){
         cityLabel.text = city.name
-        temperatureLabel.text = "\(Int(forecastResponse?.current.temp ?? 0))ºC"
+        temperatureLabel.text = forecastResponse?.current.temp.toCelsius()
         humidityValueLabel.text = "\(forecastResponse?.current.humidity ?? 0)mm"
         windValueLabel.text = "\(forecastResponse?.current.windSpeed ?? 0)km/h"
     }
@@ -260,7 +260,7 @@ extension ViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         let forecast = forecastResponse?.hourly[indexPath.row]
-        cell.loadData(time: <#T##String#>, icon: <#T##UIImage#>, temp: <#T##String#>)
+        cell.loadData(time: forecast?.dt.toHourFormat(), icon: UIImage(named: "sunIcon"), temp: forecast?.temp.toCelsius())
          
         return cell
     }

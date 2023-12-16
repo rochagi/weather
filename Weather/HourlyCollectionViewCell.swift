@@ -63,7 +63,7 @@ class HourlyCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func loadData(time: String, icon: UIImage, temp: String){
+    func loadData(time: String?, icon: UIImage?, temp: String?){
         hourLabel.text = time
         iconImageView.image = icon
         temperatureLabel.text = temp
