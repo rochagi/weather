@@ -172,6 +172,7 @@ class ViewController: UIViewController {
         temperatureLabel.text = forecastResponse?.current.temp.toCelsius()
         humidityValueLabel.text = "\(forecastResponse?.current.humidity ?? 0)mm"
         windValueLabel.text = "\(forecastResponse?.current.windSpeed ?? 0)km/h"
+        houryCollectionView.reloadData()
     }
     
     private func setUpView(){
