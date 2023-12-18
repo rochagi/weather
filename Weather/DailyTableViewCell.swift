@@ -14,7 +14,6 @@ class DailyTableViewCell: UITableViewCell {
     private lazy var weekDayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "ter".uppercased()
         label.textColor = UIColor.contrastColor
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         return label
@@ -22,7 +21,6 @@ class DailyTableViewCell: UITableViewCell {
     private lazy var minDayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "min 25ºC".uppercased()
         label.textColor = UIColor.contrastColor
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         return label
@@ -30,7 +28,6 @@ class DailyTableViewCell: UITableViewCell {
     private lazy var maxDayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "max 32ºC".uppercased()
         label.textColor = UIColor.contrastColor
         label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
         return label
@@ -39,7 +36,6 @@ class DailyTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "cloudIcon")
         return imageView
     }()
     private lazy var stackView: UIStackView = {
@@ -61,6 +57,13 @@ class DailyTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func loadData(weekDay: String?, min:String?, max: String?, icon: UIImage?){
+        weekDayLabel.text = weekDay?.uppercased()
+        minDayLabel.text = "min \(min ?? "")".uppercased()
+        maxDayLabel.text = "max \(max ?? "")".uppercased()
+        iconImageView.image = icon
+    }
+    
     private func setupView(){
         backgroundColor = .clear
         selectionStyle = .none
@@ -74,7 +77,10 @@ class DailyTableViewCell: UITableViewCell {
     private func setConstraints(){
         stackView.setConstraintsToParents(contentView)
         NSLayoutConstraint.activate([
-            weekDayLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 77)
+            weekDayLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 77),
+        ])
+        NSLayoutConstraint.activate([
+            iconImageView.heightAnchor.constraint(equalToConstant: 30)
         ])
         
     }
