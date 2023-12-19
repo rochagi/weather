@@ -47,7 +47,6 @@ class ViewController: UIViewController {
     private lazy var weatherIcon: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "sunIcon")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -172,6 +171,7 @@ class ViewController: UIViewController {
         temperatureLabel.text = forecastResponse?.current.temp.toCelsius()
         humidityValueLabel.text = "\(forecastResponse?.current.humidity ?? 0)mm"
         windValueLabel.text = "\(forecastResponse?.current.windSpeed ?? 0)km/h"
+        weatherIcon.image = UIImage(named: forecastResponse?.current.weather.first?.icon ?? "")
         houryCollectionView.reloadData()
         dailyTableView.reloadData()
     }
@@ -262,7 +262,7 @@ extension ViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         let forecast = forecastResponse?.hourly[indexPath.row]
-        cell.loadData(time: forecast?.dt.toHourFormat(), icon: UIImage(named: "sunIcon"), temp: forecast?.temp.toCelsius())
+        cell.loadData(time: forecast?.dt.toHourFormat(), icon: UIImage(named: forecast?.weather.first?.icon ?? ""), temp: forecast?.temp.toCelsius())
          
         return cell
     }
@@ -278,7 +278,7 @@ extension ViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         let forecast = forecastResponse?.daily[indexPath.row]
-        cell.loadData(weekDay: forecast?.dt.toWeekdayName(), min: forecast?.temp.min.toCelsius(), max: forecast?.temp.max.toCelsius(), icon: UIImage(named:"sunIcon"))
+        cell.loadData(weekDay: forecast?.dt.toWeekdayName(), min: forecast?.temp.min.toCelsius(), max: forecast?.temp.max.toCelsius(), icon: UIImage(named: forecast?.weather.first?.icon ?? ""))
                 
         return cell
     }
