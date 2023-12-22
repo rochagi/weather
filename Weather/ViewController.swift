@@ -145,6 +145,7 @@ class ViewController: UIViewController {
         return tableView
     }()
     
+    
     private let service = Service()
     private var city = City(lat: "-23.6814346", lon: "-46.9249599", name: "São Paulo")
     private var forecastResponse: ForecastResponse?
